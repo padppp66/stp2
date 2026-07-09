@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stupid HTML Web</title>
+    <style>
+        body {
+            font-family: Comic Sans MS, cursive;
+            background: linear-gradient(45deg, #ff69b4, #00ff00, #ffff00);
+            text-align: center;
+            padding: 50px;
+            overflow: hidden;
+        }
+        
+        h1 {
+            font-size: 4em;
+            color: #ff1493;
+            text-shadow: 3px 3px 0px #00ffff;
+            animation: bounce 1s infinite;
+        }
+        
+        p {
+            font-size: 1.5em;
+            color: #0000ff;
+            font-weight: bold;
+        }
+        
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: scale(1.2) rotate(5deg);
+        }
+        
+        .box {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 20px auto;
+            max-width: 500px;
+            border: 5px dashed #ff00ff;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+    </style>
+</head>
+<body>
+    <h1>🎉 STUPID HTML WEB 🎉</h1>
+    
+    <div class="box">
+        <p>Welcome to the most ridiculous website ever created!</p>
+        <p id="message">Click the buttons below to experience pure chaos!</p>
+    </div>
+    
+    <button onclick="makeRandomColor()">Random Colors</button>
+    <button onclick="spinIt()">SPIN SPIN SPIN!</button>
+    <button onclick="showAlert()">Click me for a surprise!</button>
+    <button onclick="resetPage()">RESET</button>
+    
+    <script>
+        let spinCount = 0;
+        
+        function makeRandomColor() {
+            const colors = ['#ff69b4', '#00ff00', '#ffff00', '#00ffff', '#ff1493', '#00ff00'];
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.background = randomColor;
+            document.getElementById('message').textContent = '🎨 COLORS ARE CRAZY! 🎨';
+        }
+        
+        function spinIt() {
+            spinCount++;
+            document.body.style.transform = 'rotate(' + (spinCount * 360) + 'deg)';
+            document.getElementById('message').textContent = '🌀 WHEEEEEEE! 🌀';
+        }
+        
+        function showAlert() {
+            alert('YOU CLICKED IT! 🎪\n\nCongratulations on being part of this stupidity!');
+        }
+        
+        function resetPage() {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
